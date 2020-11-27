@@ -94,7 +94,7 @@ function mouseReleased(){
 
 function keyPressed(){
     if(keyCode === 32){
-       // slingshot.attach(bird.body);
+       slingshot.attach(bird.body);
     }
 }
 
@@ -103,6 +103,7 @@ async function getBackgroundImg(){
     var responseJSON = await response.json();
 
     var datetime = responseJSON.datetime;
+
     var hour = datetime.slice(11,13);
     
     if(hour>=06 && hour<=19){
@@ -114,4 +115,5 @@ async function getBackgroundImg(){
 
     backgroundImg = loadImage(bg);
     console.log(backgroundImg);
+    
 }
